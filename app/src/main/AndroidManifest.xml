@@ -9,6 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".login_operator"></activity>
+        <activity
+            android:name=".SAC_Operator"
+            android:label="@string/title_activity_sac__operator"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SAC_Costumer"
+            android:label="@string/title_activity_sac__costumer"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".daftar_costumer" />
+        <activity android:name=".lupa_password" />
+        <activity android:name=".login_costumer" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
