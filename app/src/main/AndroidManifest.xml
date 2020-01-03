@@ -22,9 +22,7 @@
         <activity android:name=".login_costumer" />
         <activity android:name=".lupa_password" />
         <activity android:name=".daftar_costumer" />
-        <activity
-            android:name=".SAC_Costumer"
-            android:label="@string/title_activity_sac__costumer" />
+        <activity android:name=".SAC_Costumer" />
     </application>
 
 </manifest>

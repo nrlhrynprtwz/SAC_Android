@@ -24,7 +24,7 @@ public class SAC_Costumer extends AppCompatActivity {
 
         mSectionsPageAdapter = new SectionsPageAdapter (getSupportFragmentManager());
 
-        mViewPager = (ViewPager) findViewById (R.id.container);
+        mViewPager = (ViewPager) findViewById (R.id.view_pager);
         setupViewPager (mViewPager);
 
         TabLayout tabLayout = (TabLayout) findViewById (R.id.tabs);
