@@ -1,39 +1,42 @@
 package com.sacmakassar;
 
-import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.ViewParent;
+import android.widget.TableLayout;
+
 import com.google.android.material.tabs.TabLayout;
 
 import androidx.viewpager.widget.ViewPager;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-
-import com.sacmakassar.ui.main.SectionsPagerAdapter;
 
 public class SAC_Costumer extends AppCompatActivity {
-
+    private static final String TAG = "SAC_Costumer";
+    private SectionsPageAdapter mSectionsPageAdapter;
+    private ViewPager mViewPager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sac__costumer);
-        SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
-        ViewPager viewPager = findViewById(R.id.view_pager);
-        viewPager.setAdapter(sectionsPagerAdapter);
-        TabLayout tabs = findViewById(R.id.tabs);
-        tabs.setupWithViewPager(viewPager);
-        FloatingActionButton fab = findViewById(R.id.fab);
 
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        Log.d(TAG, "onCreate : Starting.");
+
+        mSectionsPageAdapter = new SectionsPageAdapter (getSupportFragmentManager());
+
+        mViewPager = (ViewPager) findViewById (R.id.container);
+        setupViewPager (mViewPager);
+
+        TabLayout tabLayout = (TabLayout) findViewById (R.id.tabs);
+        tabLayout.setupWithViewPager(mViewPager);
+
+    }
+    private  void setupViewPager (ViewPager viewPager){
+        SectionsPageAdapter adapter = new SectionsPageAdapter (getSupportFragmentManager());
+        adapter.addFragment(new tab1_costumer(),"TAB1");
+        adapter.addFragment(new tab2_costumer(), "TAB2");
+        adapter.addFragment(new tab3_costumer(), "TAB3");
+        adapter.addFragment(new tab4_costumer(), "TAB4");
+        viewPager.setAdapter(adapter);
     }
 }

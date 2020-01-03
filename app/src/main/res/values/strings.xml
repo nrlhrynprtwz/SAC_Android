@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SAC Makassar</string>
+    <string name="app_name"><i>SAC Makassar</i></string>
     <string name="underline_signup"><u>Belum Punya Akun? Daftar Sekarang!</u></string>
     <string name="title_activity_sac__costumer">SAC_Costumer</string>
     <string name="tab_text_1">Tab 1</string>
